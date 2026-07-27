@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#171b2a" />
+  <meta name="description" content="A little storybook made for Dubu." />
+  <title>To Dubu, Our Little Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2" />
+</head>
+<body>
+  <div class="rain" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <button id="soundButton" class="sound-button" aria-label="Toggle ambient sound">♪</button>
+
+  <main>
+    <section class="scene cover-scene" id="cover">
+      <div class="window"><span class="moon"></span><span class="cloud c1"></span><span class="cloud c2"></span></div>
+      <div class="desk">
+        <div class="passport">INDIA<br><small>MEMORIES</small></div>
+        <div class="octopus" title="Our little pottery octopus"><span>•ᴗ•</span></div>
+        <div class="cat" title="A tiny cat for the cat lover">ᓚᘏᗢ</div>
+        <button class="book" id="openBook" aria-label="Open our story">
+          <span class="book-flower">❀</span>
+          <span class="book-title">To Dubu</span>
+          <span class="book-subtitle">Our Little Story</span>
+          <span class="book-names">Dhruvi ♡ Drumil</span>
+        </button>
+      </div>
+      <p class="cover-hint">Tap the book to begin</p>
+    </section>
+
+    <section class="scene chapter school" id="chapter-school">
+      <div class="chapter-number">Chapter One</div>
+      <div class="school-speaker">◖</div>
+      <div class="announcement" aria-live="polite">
+        <span>Would <b id="nameGlitch">Drumil</b> please report to the office?</span>
+      </div>
+      <div class="hallway-lines"></div>
+      <div class="story-card">
+        <p class="handwritten">Almost eight years ago...</p>
+        <h2>The Girl Who Yelled at Me</h2>
+        <p>We met in a school hallway because an announcement mixed up our very similar names.</p>
+        <p>You thought I had something to do with it, so naturally, you yelled at me. Little do you know that I was so into it!</p>
+        <blockquote>Not exactly the beginning of a love story anyone would predict.</blockquote>
+        <p>But somehow, that ridiculous little mix-up became the first page of ours.</p>
+      </div>
+      <a class="next-button chapter-link" href="#chapter-airport">Eight years later ✈</a>
+    </section>
+
+    <section class="scene chapter airport" id="chapter-airport">
+      <div class="chapter-number">Chapter Two</div>
+      <div class="departures"><span>DEPARTURES</span><b>08 AUG 2024</b><small>BOARDING • A NEW CHAPTER</small></div>
+      <div class="terminal-window"><div class="runway"></div><div class="plane">✈</div></div>
+      <div class="airport-copy">
+        <p class="handwritten">There are days that quietly change everything.</p>
+        <h2>August 8, 2024</h2>
+        <p>A day before I left for graduate studies, you admitted you had feelings for me.</p>
+        <p>You came with me to the airport. Somewhere between goodbyes, nerves, and a plane waiting outside, I convinced you to take a chance on us.</p>
+        <p>It was not serious yet. We did not know what it would become.</p>
+        <blockquote>If you could relive one day, you still say it would be this one.</blockquote>
+      </div>
+      <figure class="memory-photo airport-photo">
+        <img src="assets/photos/airport-photo.jpg" alt="Drumil and Dhruvi at the airport on August 8, 2024" onerror="this.src='assets/photos/airport-placeholder.svg'">
+        <figcaption>the day everything changed ♡</figcaption>
+      </figure>
+      <button class="next-button" data-next="#chapter-yes">Then came the real yes</button>
+    </section>
+
+    <section class="scene chapter january" id="chapter-yes">
+      <div class="snow" aria-hidden="true"></div>
+      <div class="chapter-number">Chapter Three</div>
+      <div class="january-card">
+        <p class="handwritten">January 28, 2025</p>
+        <h2>The Yes That Made It Real</h2>
+        <p>What began as a leap of faith became something we both wanted to choose seriously.</p>
+        <button id="yesButton" class="yes-button">Will you choose us?</button>
+        <div id="yesReveal" class="yes-reveal" aria-live="polite">Yes. ♡</div>
+      </div>
+      <button class="next-button hidden-until-yes" data-next="#chapter-distance">Across the distance</button>
+    </section>
+
+    <section class="scene chapter distance" id="chapter-distance">
+      <div class="chapter-number">Chapter Four</div>
+      <h2>Two Places, One Us</h2>
+      <div class="map-card">
+        <div class="place india">India<span></span></div>
+        <svg class="heart-line" viewBox="0 0 800 260" preserveAspectRatio="none" aria-hidden="true"><path d="M90,170 C240,20 560,245 710,85" /></svg>
+        <div class="place chicago">Chicago<span></span></div>
+        <div class="pulse-message m1">movie night 🎬</div>
+        <div class="pulse-message m2">late call ☎</div>
+        <div class="pulse-message m3">I miss you ♡</div>
+      </div>
+      <div class="distance-grid">
+        <button class="memory-chip" data-message="Teleparty turned two separate rooms into one little movie theater.">Teleparty nights</button>
+        <button class="memory-chip" data-message="Calls, messages, and ordinary updates became the rhythm of us.">Everyday calls</button>
+        <button class="memory-chip" data-message="Long distance was never easy, but loving you always felt worth it.">Choosing us</button>
+      </div>
+      <p id="distanceMessage" class="distance-message">Tap a memory.</p>
+      <button class="next-button" data-next="#chapter-india">And then, finally...</button>
+    </section>
+
+    <section class="scene chapter india-summer" id="chapter-india">
+      <div class="chapter-number">Chapter Five</div>
+      <h2>Finally, the Same Place</h2>
+      <p class="chapter-intro">On June 22, 2025, I came back to India for a month. It became the best month of my life.</p>
+      <div class="apartment apartment-upgraded">
+        <div class="room-window"><span class="room-moon"></span><span class="fairy-lights">✦ · ✦ · ✦ · ✦</span></div>
+        <button class="room-object room-mirror" data-memory="Every mirror became an excuse for one more picture together." data-photo="assets/photos/elevator-black.jpg" data-caption="One more mirror selfie, because one was never enough.">Mirror selfies ♡</button>
+        <button class="room-object couch" data-memory="Every day after your job, we had your little studio apartment to ourselves. Ordinary evenings became my favorite memories." data-photo="assets/photos/polaroids.jpg" data-caption="The little moments I wish I could keep forever.">our everyday place</button>
+        <button class="room-object tv" data-memory="For once, we did not need Teleparty. We were finally watching life from the same room.">movie nights</button>
+        <button class="room-object octo-shelf" data-memory="The two tiny octopuses we made together still feel like a miniature version of us." data-photo="assets/photos/pottery.jpg" data-caption="Not professional potters. Still a perfect day.">our octopuses</button>
+        <button class="room-object cat-corner" data-memory="You planned a cat café because you know exactly what makes me happy." data-photo="assets/photos/cat-cafe.jpg" data-caption="Dubu, me, and the happiest cat on my lap.">cat café</button>
+        <button class="room-object date-door" data-memory="Every time we walked out that door together, another memory began." data-photo="assets/photos/date-night.jpg" data-caption="A date night with my favorite person.">date night</button>
+      </div>
+      <div id="apartmentMemory" class="apartment-memory">Click around Dubu's little apartment to relive a memory.</div>
+      <div class="memory-strip" aria-label="Our month together">
+        <button class="mini-polaroid" data-photo="assets/photos/elevator-floral.jpg" data-caption="The soft, everyday kind of happiness."><img src="assets/photos/elevator-floral.jpg" alt="Drumil and Dhruvi taking an elevator mirror selfie"><span>ordinary days ♡</span></button>
+        <button class="mini-polaroid" data-photo="assets/photos/polaroids.jpg" data-caption="Seven tiny proofs that this month really happened."><img src="assets/photos/polaroids.jpg" alt="A collection of Drumil and Dhruvi's instant photos"><span>our little photo pile</span></button>
+        <button class="mini-polaroid" data-photo="assets/photos/date-night.jpg" data-caption="You, me, and one of the nights I never wanted to end."><img src="assets/photos/date-night.jpg" alt="Drumil and Dhruvi on a date night"><span>date night</span></button>
+      </div>
+      <button class="next-button" data-next="#chapter-birthday">The birthday chapter</button>
+    </section>
+
+    <section class="scene chapter birthday" id="chapter-birthday">
+      <div class="chapter-number">Chapter Six</div>
+      <h2>My Favorite Birthday</h2>
+      <p class="handwritten date-line">July 30, 2025</p>
+      <div class="birthday-cards">
+        <article class="date-card photo-card pottery" data-photo="assets/photos/pottery.jpg" data-caption="Making our tiny octopuses together."><img src="assets/photos/pottery.jpg" alt="Drumil and Dhruvi at their private pottery session"><div class="mini-octopi"><span>•ᴗ•</span><span>•ᴗ•</span></div><h3>Pottery for Two</h3><p>We made tiny, cute octopuses in a private pottery session.</p><button class="view-memory">Open this memory</button></article>
+        <article class="date-card photo-card cafe" data-photo="assets/photos/cat-cafe.jpg" data-caption="The cat café you chose because you know me so well."><img src="assets/photos/cat-cafe.jpg" alt="Drumil and Dhruvi together at the cat cafe"><div class="cat-parade">ᓚᘏᗢ</div><h3>Cat Café</h3><p>You took me somewhere full of cats because you know how much I love them.</p><button class="view-memory">Open this memory</button></article>
+        <article class="date-card photo-card dinner video-memory" data-video="assets/videos/little-door.mp4" data-caption="The Little Door, with my favorite person."><div class="video-preview"><video class="inline-memory-video" src="assets/videos/little-door.mp4" muted autoplay loop playsinline preload="metadata" aria-label="A video memory from The Little Door"></video><span class="video-play" aria-hidden="true">▶</span></div><div class="little-door">THE<br>LITTLE<br>DOOR</div><h3>Dinner Together</h3><p>We ended the day with food at The Little Door.</p><button class="view-memory">Open our video</button></article>
+      </div>
+      <blockquote class="birthday-quote">My favorite birthday was not special because I got older. It was special because I spent it with you.</blockquote>
+      <button class="next-button" data-next="#chapter-love">Three little words</button>
+    </section>
+
+    <section class="scene chapter love" id="chapter-love">
+      <div class="chapter-number">Chapter Seven</div>
+      <div class="love-dialogue">
+        <p class="speaker drumil">Drumil</p>
+        <button id="loveButton" class="love-button">Tap to say it</button>
+        <p id="loveLineOne" class="love-line">I love you.</p>
+        <p id="loveLineTwo" class="love-line reply">I love you too.</p>
+        <p id="loveCaption" class="love-caption">I said it first when I visited you. You said it back the next day.</p>
+      </div>
+      <button class="next-button hidden-love-next" data-next="#chapter-future">For all the days ahead</button>
+    </section>
+
+    <section class="scene chapter future" id="chapter-future">
+      <div class="chapter-number">A Secret Chapter</div>
+      <h2>For the Days We Have Not Lived Yet</h2>
+      <div class="future-road"><div class="tiny-house">⌂</div><div class="future-cat">ᓚᘏᗢ</div></div>
+      <div class="future-list">
+        <span>movies on one couch</span><span>more birthdays together</span><span>new cities</span><span>our own little home</span><span>no airport goodbyes</span><span>a cat, obviously</span>
+      </div>
+      <button class="next-button" data-next="#final-letter">One last page</button>
+    </section>
+
+    <section class="scene final-letter" id="final-letter">
+      <div class="letter-paper">
+        <p class="handwritten">My Dubu,</p>
+        <p>From a school hallway mix-up, to an airport goodbye that became our beginning, to one unforgettable month together, every version of us has led me here.</p>
+        <p>Thank you for choosing something difficult, real, funny, imperfect, and completely ours.</p>
+        <p>Distance has asked a lot from us, but it has never made my love for you smaller.</p>
+        <p>I cannot wait for the day Teleparty becomes one couch, airport goodbyes become airport arrivals, and ordinary evenings together stop feeling temporary.</p>
+        <p class="handwritten closing">Happy 1 year and 7 months, Dubu.<br>I love you.</p>
+        <p class="signature">Always yours,<br>Drumil ♡</p>
+      </div>
+      <button id="finalSurprise" class="final-surprise-button">To be continued...</button>
+      <div id="hearts" aria-hidden="true"></div>
+    </section>
+  </main>
+
+
+  <div id="photoModal" class="photo-modal" aria-hidden="true" role="dialog" aria-label="Memory photo">
+    <button id="closePhotoModal" class="photo-modal-close" aria-label="Close photo">×</button>
+    <figure class="photo-modal-card">
+      <img id="modalPhoto" src="" alt="A memory of Drumil and Dhruvi">
+      <figcaption id="modalCaption"></figcaption>
+    </figure>
+  </div>
+  <div id="videoModal" class="video-modal" aria-hidden="true" role="dialog" aria-label="Memory video">
+    <button id="closeVideoModal" class="photo-modal-close" aria-label="Close video">×</button>
+    <figure class="video-modal-card">
+      <div class="projector-label">OUR LITTLE CINEMA</div>
+      <video id="modalVideo" controls playsinline preload="metadata"></video>
+      <figcaption id="videoCaption"></figcaption>
+    </figure>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <audio id="ambientAudio" loop preload="none"><source src="assets/audio/our-song.mp3" type="audio/mpeg"></audio>
+  <script src="script.js?v=2"></script>
+</body>
+</html>
